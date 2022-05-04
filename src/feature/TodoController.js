@@ -24,9 +24,16 @@ export const TodoController = ({children}) => {
 
     useEffect(() => {
         localStorage.setItem("todoList", JSON.stringify(todoList));
-        setTotalTodo(todoList.length)
-        setTotalFavorite(todoList.filter(m=>m.isFav).length)
-        setTotalDone(todoList.filter(m=>m.isDone).length)
+        if(todoList) {
+            setTotalTodo(todoList.length)
+            setTotalFavorite(todoList.filter(m=>m.isFav).length)
+            setTotalDone(todoList.filter(m=>m.isDone).length)
+        } else {
+            setTotalTodo(0)
+            setTotalFavorite(0)
+            setTotalDone(0)
+        }
+        
     }, [todoList, hideComplete])
     
     const onSave = () => {

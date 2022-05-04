@@ -1,21 +1,23 @@
-import React from 'react'
-import { withController } from '../hoc/withController';
+import React from 'react';
 import Checklist from './Checklist';
 import Input from './Input';
 import { TodoController } from './TodoController';
 import Summary from './Summary';
-import Header from './header';
+import Header from './Header';
 
 
 function ChecklistScreen() {
     return (
-        <div>
-            <Header />
-            <Input />
-            <Checklist />
-            <Summary />
-        </div>
+        <TodoController>
+            <div>
+                <Header />
+                <Input />
+                <Checklist />
+                <Summary />
+            </div>
+        </TodoController>
+        
     )
 }
 
-export default withController(TodoController)(ChecklistScreen)
+export default ChecklistScreen

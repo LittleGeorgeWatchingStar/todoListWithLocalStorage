@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 import ChecklistScreen from './feature/ChecklistScreen';
-import Header from './feature/header';
 
 function App() {
   return (
-    <React.Fragment className="App">
+    <div className="App">
       <ChecklistScreen />
-    </React.Fragment >
+    </div>
   );
 }
 

@@ -4,9 +4,9 @@ import { useTodoContext } from './TodoController'
 
 
 export default function Summary() {
-    const {totalDone,totalTodo,totalFavorite} = useTodoContext()
+    const {totalDone, totalTodo, totalFavorite} = useTodoContext();
     return (
-        <Grid container direction="column" justify="center" style={{ marginLeft:15 }}>
+        <Grid container direction="column" justifyContent="center" style={{ marginLeft:15 }}>
             <Typography>Done {totalDone}/{totalTodo}</Typography>
             <Typography>Favorite {totalFavorite}/{totalTodo}</Typography>
         </Grid>

@@ -5,7 +5,7 @@ import { FormControlLabel, FormGroup } from '@material-ui/core';
 
 
 export default function Header() {
-    const {hideComplete, setHideComplete, onHideComplete} = useTodoContext()
+    const {onHideComplete} = useTodoContext()
     return (
         <div className="header">
             <h1>Todo List</h1>
