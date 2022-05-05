@@ -7,14 +7,22 @@ export const useTodoContext = () => useContext(TodoContext)
 
 
 // to start with these data
-// const mockupChecklist = [
-//     {title:"test1",isDone:true,isFav:false},
-//     {title:"test2",isDone:false,isFav:false},
-//     {title:"test3",isDone:true,isFav:true},
-// ]
+const mockupChecklist = [
+    {title:"sample task",isDone:false,isFav:false},
+]
 
 export const TodoController = ({children}) => {
-    const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("todoList")))
+    const [todoList, setTodoList] = useState(
+        () => {
+        let iniState = null;
+        if (localStorage.getItem("todoList") === null) {
+            iniState = mockupChecklist;
+        } else {
+            iniState = JSON.parse(localStorage.getItem("todoList"))
+        }
+        return iniState;
+    }
+    )
     const [taskInput, setTaskInput] = useState("")
     const [hideComplete, setHideComplete] = useState(false)
     const [editingIndex, setEditingIndex] = useState(-1)
