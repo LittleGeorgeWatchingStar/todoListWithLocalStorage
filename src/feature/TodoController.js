@@ -5,11 +5,12 @@ export const TodoContext = React.createContext();
 // customed hook
 export const useTodoContext = () => useContext(TodoContext)
 
-
 // to start with these data
-const mockupChecklist = [
-    {title:"sample task",isDone:false,isFav:false},
-]
+// const mockupChecklist = [
+//     {title:"sample task",isDone:false,isFav:false},
+// ]
+
+const mockupChecklist = []
 
 export const TodoController = ({children}) => {
     const [todoList, setTodoList] = useState(
